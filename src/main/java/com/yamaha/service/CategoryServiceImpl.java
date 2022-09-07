@@ -10,15 +10,18 @@ public class CategoryServiceImpl implements CategoryService {
     @Autowired
     CategoryRepository categoryRepository;
 
-    @Override
-    public Category addCategory(Category category) {
-        try {
-            categoryRepository.findByCategory(category.getCategory());
-//            if (){}
-             return categoryRepository.save(category);
-        } catch (Exception e) {
-            throw new RuntimeException("khong add vao duoc");
-        }
+
+    public Boolean addCategory(Category category)  {
+
+            boolean exist = categoryRepository.existsCategoriesByName(category.getName());
+            if (exist) {
+                System.out.println("Da ton tai");
+                return false;
+           } else {
+               categoryRepository.save(category);
+                return true;
+            }
+
 
     }
 }
