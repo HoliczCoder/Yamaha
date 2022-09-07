@@ -1,8 +1,8 @@
 package com.yamaha.controller;
 
 
-import com.yamaha.model.Category;
-import com.yamaha.service.CategoryService;
+import com.yamaha.model.MotorcycleCat;
+import com.yamaha.service.MotorcycleCatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,25 +12,25 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/category")
-public class CategoryController {
+public class MotorcycleCatController {
     @Autowired
-    CategoryService categoryServiceImpl;
+    MotorcycleCatService motorcycleCatServiceImpl;
 
     @PostMapping
-    public ResponseEntity<Boolean> addCategory(@RequestBody @Valid Category category) {
+    public ResponseEntity<Boolean> addCategory(@RequestBody @Valid MotorcycleCat motorcycleCat) {
 //        categoryServiceDTO.addCategory(category);
 //        System.out.println("hello world");
-        return ResponseEntity.ok(categoryServiceImpl.addCategory(category));
+        return ResponseEntity.ok(motorcycleCatServiceImpl.addCategory(motorcycleCat));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCategory(@PathVariable Long id) {
-        String response = categoryServiceImpl.removeCategoryById(id);
+        String response = motorcycleCatServiceImpl.removeCategoryById(id);
         return ResponseEntity.ok(response);
     }
     @GetMapping
-    public ResponseEntity<List<Category>> getAllCategory() {
-        return ResponseEntity.ok(categoryServiceImpl.getAllCategory()
+    public ResponseEntity<List<MotorcycleCat>> getAllCategory() {
+        return ResponseEntity.ok(motorcycleCatServiceImpl.getAllCategory()
         );
     }
 
