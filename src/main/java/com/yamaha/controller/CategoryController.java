@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/category")
@@ -16,13 +17,22 @@ public class CategoryController {
     CategoryService categoryServiceImpl;
 
     @PostMapping
-    public ResponseEntity<Boolean> addCategory(@RequestBody @Valid Category category){
+    public ResponseEntity<Boolean> addCategory(@RequestBody @Valid Category category) {
 //        categoryServiceDTO.addCategory(category);
 //        System.out.println("hello world");
         return ResponseEntity.ok(categoryServiceImpl.addCategory(category));
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCategory(@PathVariable Long id) {
+        String response = categoryServiceImpl.removeCategoryById(id);
+        return ResponseEntity.ok(response);
+    }
+    @GetMapping
+    public ResponseEntity<List<Category>> getAllCategory() {
+        return ResponseEntity.ok(categoryServiceImpl.getAllCategory()
+        );
+    }
 
 
 }
