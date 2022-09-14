@@ -27,7 +27,7 @@ public class SpecificationEntity {
     @JoinColumn (name = "dimension_id")
     private DimensionEntity dimension;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn (name = "dimension_id")
+    @JoinColumn (name = "other_id")
     private OtherEntity other;
 
 

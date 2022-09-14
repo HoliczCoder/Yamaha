@@ -1,23 +1,28 @@
 package com.yamaha.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.annotation.Resource;
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "product_dimension")
 @Data
 @Entity
+@Builder
 public class DimensionEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     // mo ta cua engine viet o duoi day
     private String description;
-    @OneToMany(mappedBy = "engine", cascade = CascadeType.ALL)
-    private Collection<SpecificationEntity> specification;
+    @OneToMany(mappedBy = "dimension", cascade = CascadeType.ALL)
+    private List<SpecificationEntity> specification;
+
 }

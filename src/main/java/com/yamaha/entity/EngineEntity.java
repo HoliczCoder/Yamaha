@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +20,7 @@ public class EngineEntity {
     // mo ta cua engine viet o duoi day
     private String description;
     @OneToMany(mappedBy = "engine", cascade = CascadeType.ALL)
-    private Collection<SpecificationEntity> specification;
+    private List<SpecificationEntity> specification;
 
 
 
