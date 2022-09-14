@@ -12,8 +12,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ChassisDTO {
     private Long id;
-    private String description;
+    private String suspensionFront;
+    private String suspensionRear;
+    private String brakesFront;
+    private String brakesRear;
+    private String tiresFront;
+    private String tiresRear;
     public static ChassisDTO entityToDTO (ChassisEntity chassisEntity){
-        return ChassisDTO.builder().description(chassisEntity.getDescription()).build();
+        return ChassisDTO.builder().suspensionFront(chassisEntity.getSuspensionFront()).suspensionRear(chassisEntity.getSuspensionRear()).brakesFront(chassisEntity.getBrakesFront()).brakesRear(chassisEntity.getBrakesRear()).tiresFront(chassisEntity.getTiresFront()).tiresRear(chassisEntity.getTiresRear()).build();
     }
 }

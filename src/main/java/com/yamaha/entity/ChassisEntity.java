@@ -15,12 +15,17 @@ import java.util.List;
 @Table(name="product_chassis")
 @Entity
 @Builder
-public class    ChassisEntity {
+public class ChassisEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+    private String suspensionFront;
+    private String suspensionRear;
+    private String brakesFront;
+    private String brakesRear;
+    private String tiresFront;
+    private String tiresRear;
     // mo ta cua engine viet o duoi day
-    private String description;
     @OneToMany(mappedBy = "chassis", cascade = CascadeType.ALL)
     private List<SpecificationEntity> specification;
 

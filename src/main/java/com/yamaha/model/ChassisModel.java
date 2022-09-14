@@ -12,14 +12,20 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ChassisModel  {
+public class ChassisModel {
     private Long id;
-    private String description;
+    private String suspensionFront;
+    private String suspensionRear;
+    private String brakesFront;
+    private String brakesRear;
+    private String tiresFront;
+    private String tiresRear;
 
     // cho phia duoi la build model thanh entity
     public static ChassisEntity ModelToEntity(ChassisModel chassisModel) {
-        return ChassisEntity.builder().description(chassisModel.getDescription()).build();
+        return ChassisEntity.builder().suspensionFront(chassisModel.getSuspensionFront()).suspensionRear(chassisModel.getSuspensionRear()).brakesFront(chassisModel.getBrakesFront()).brakesRear(chassisModel.getBrakesRear()).tiresFront(chassisModel.getTiresFront()).tiresRear(chassisModel.getTiresRear()).build();
     }
 
 
 }
+
