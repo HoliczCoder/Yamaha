@@ -18,7 +18,12 @@ public class EngineEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     // mo ta cua engine viet o duoi day
-    private String description;
+    private String engineType;
+    private String boreStroke;
+    private String compressionRatio;
+    private String fuelDelivery;
+    private String transmission;
+    private String finalDrive;
     @OneToMany(mappedBy = "engine", cascade = CascadeType.ALL)
     private List<SpecificationEntity> specification;
 

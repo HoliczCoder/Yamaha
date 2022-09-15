@@ -14,9 +14,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DimensionDTO {
     private Long id;
-    private String description;
+    private String lwh;
+    private String seatHeight;
+    private String wheelBase;
+    private String rake;
+    private String trail;
+    private String maximumGroundClearance;
+    private String fuelCapacity;
+    private String wetWeight;
     public static DimensionDTO entityToDTO (DimensionEntity dimensionEntity){
-        return DimensionDTO.builder().description(dimensionEntity.getDescription()).build();
+        return DimensionDTO.builder().id(dimensionEntity.getId()).lwh(dimensionEntity.getLwh()).seatHeight(dimensionEntity.getSeatHeight()).wheelBase(dimensionEntity.getWheelBase()).rake(dimensionEntity.getRake()).trail(dimensionEntity.getTrail()).maximumGroundClearance(dimensionEntity.getMaximumGroundClearance()).fuelCapacity(dimensionEntity.getFuelCapacity()).wetWeight(dimensionEntity.getWetWeight()).build();
     }
 
 }

@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 @Data
 @Builder
@@ -22,8 +23,9 @@ public class ChassisModel {
     private String tiresRear;
 
     // cho phia duoi la build model thanh entity
-    public static ChassisEntity ModelToEntity(ChassisModel chassisModel) {
-        return ChassisEntity.builder().suspensionFront(chassisModel.getSuspensionFront()).suspensionRear(chassisModel.getSuspensionRear()).brakesFront(chassisModel.getBrakesFront()).brakesRear(chassisModel.getBrakesRear()).tiresFront(chassisModel.getTiresFront()).tiresRear(chassisModel.getTiresRear()).build();
+    public static ChassisEntity ModelToEntity(@NotNull ChassisModel chassisModel) {
+
+        return ChassisEntity.builder().id(chassisModel.getId()).suspensionFront(chassisModel.getSuspensionFront()).suspensionRear(chassisModel.getSuspensionRear()).brakesFront(chassisModel.getBrakesFront()).brakesRear(chassisModel.getBrakesRear()).tiresFront(chassisModel.getTiresFront()).tiresRear(chassisModel.getTiresRear()).build();
     }
 
 

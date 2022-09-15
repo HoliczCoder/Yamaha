@@ -15,7 +15,8 @@ public class ChassisServiceImpl implements ChassisService {
     @Override
     public Object add(ChassisModel chassisModel) {
         ChassisEntity chassisEntity = ChassisModel.ModelToEntity(chassisModel);
-        return chassisRepository.save(chassisEntity);
+        chassisEntity =  chassisRepository.save(chassisEntity);
+        return chassisEntity;
         // chac la okie roi
     }
 

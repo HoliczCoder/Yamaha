@@ -19,6 +19,6 @@ public class ChassisDTO {
     private String tiresFront;
     private String tiresRear;
     public static ChassisDTO entityToDTO (ChassisEntity chassisEntity){
-        return ChassisDTO.builder().suspensionFront(chassisEntity.getSuspensionFront()).suspensionRear(chassisEntity.getSuspensionRear()).brakesFront(chassisEntity.getBrakesFront()).brakesRear(chassisEntity.getBrakesRear()).tiresFront(chassisEntity.getTiresFront()).tiresRear(chassisEntity.getTiresRear()).build();
+        return ChassisDTO.builder().id(chassisEntity.getId()).suspensionFront(chassisEntity.getSuspensionFront()).suspensionRear(chassisEntity.getSuspensionRear()).brakesFront(chassisEntity.getBrakesFront()).brakesRear(chassisEntity.getBrakesRear()).tiresFront(chassisEntity.getTiresFront()).tiresRear(chassisEntity.getTiresRear()).build();
     }
 }

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.web.server.Compression;
 
 @Data
 @Builder
@@ -13,8 +14,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EngineDTO {
     private Long id;
-    private String description;
+    private String engineType;
+    private String boreStroke;
+    private String compressionRatio;
+    private String fuelDelivery;
+    private String transmission;
+    private String finalDrive;
+
+
     public static EngineDTO entityToDTO (EngineEntity engineEntity){
-        return EngineDTO.builder().description(engineEntity.getDescription()).build();
+        return EngineDTO.builder().engineType(engineEntity.getEngineType()).boreStroke(engineEntity.getBoreStroke()).compressionRatio(engineEntity.getCompressionRatio()).fuelDelivery(engineEntity.getFuelDelivery()).transmission(engineEntity.getTransmission()).finalDrive(engineEntity.getFinalDrive()).build();
     }
 }

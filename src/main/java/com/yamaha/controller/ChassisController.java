@@ -19,7 +19,7 @@ public class ChassisController {
 
     @PostMapping
     public Object addProductChassis(@RequestBody ChassisModel chassisModel) {
-        return ResponseDTO.of(chassisService.add(chassisModel), "Add product successful");
+        return ResponseDTO.of(chassisService.add(chassisModel), "thanh cong");
     }
 
     @GetMapping

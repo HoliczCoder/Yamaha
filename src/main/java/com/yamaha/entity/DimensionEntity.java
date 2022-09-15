@@ -21,7 +21,15 @@ public class DimensionEntity {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     // mo ta cua engine viet o duoi day
-    private String description;
+    private String lwh;
+    private String seatHeight;
+    private String wheelBase;
+    private String rake;
+    private String trail;
+    private String maximumGroundClearance;
+    private String fuelCapacity;
+    private String wetWeight;
+
     @OneToMany(mappedBy = "dimension", cascade = CascadeType.ALL)
     private List<SpecificationEntity> specification;
 
