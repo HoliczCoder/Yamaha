@@ -26,6 +26,11 @@ public class DimensionEntity {
     private String wheelBase;
     private String rake;
     private String trail;
+
+    public void setSpecification(SpecificationEntity specification) {
+        this.specification.add(specification);
+    }
+
     private String maximumGroundClearance;
     private String fuelCapacity;
     private String wetWeight;

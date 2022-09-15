@@ -29,4 +29,7 @@ public class ChassisEntity {
     @OneToMany(mappedBy = "chassis", cascade = CascadeType.ALL)
     private List<SpecificationEntity> specification;
 
+    public void setSpecification(SpecificationEntity specification) {
+        this.specification.add(specification);
+    }
 }

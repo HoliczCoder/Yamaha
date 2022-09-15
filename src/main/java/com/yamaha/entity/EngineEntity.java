@@ -23,6 +23,11 @@ public class EngineEntity {
     private String compressionRatio;
     private String fuelDelivery;
     private String transmission;
+
+    public void setSpecification(SpecificationEntity specification) {
+        this.specification.add(specification);
+    }
+
     private String finalDrive;
     @OneToMany(mappedBy = "engine", cascade = CascadeType.ALL)
     private List<SpecificationEntity> specification;
