@@ -31,5 +31,6 @@ public class ChassisEntity {
 
     public void setSpecification(SpecificationEntity specification) {
         this.specification.add(specification);
+        System.out.println(this.specification.toArray());
     }
 }

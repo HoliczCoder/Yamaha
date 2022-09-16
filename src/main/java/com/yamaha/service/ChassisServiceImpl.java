@@ -1,6 +1,5 @@
 package com.yamaha.service;
 
-import com.yamaha.dto.ChassisDTO;
 import com.yamaha.entity.ChassisEntity;
 import com.yamaha.model.ChassisModel;
 import com.yamaha.repository.ChassisRepository;
@@ -21,8 +20,8 @@ public class ChassisServiceImpl implements ChassisService {
     }
 
     @Override
-    public Object findById(Long id) {
-        return chassisRepository.findById(id);
+    public ChassisEntity findById(Long id) {
+        return chassisRepository.findById(id).get();
         // chac la okie r
     }
 }

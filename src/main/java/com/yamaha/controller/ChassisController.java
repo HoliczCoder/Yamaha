@@ -1,7 +1,9 @@
 package com.yamaha.controller;
 
 
+import com.yamaha.dto.ChassisDTO;
 import com.yamaha.dto.ResponseDTO;
+import com.yamaha.entity.ChassisEntity;
 import com.yamaha.model.ChassisModel;
 import com.yamaha.service.ChassisService;
 import com.yamaha.service.ChassisServiceImpl;
@@ -22,10 +24,11 @@ public class ChassisController {
         return ResponseDTO.of(chassisService.add(chassisModel), "thanh cong");
     }
 
-    @GetMapping
-    public Object getProductChassis( Long id) {
-        return chassisService.findById (id);
+    @GetMapping("{chassis_id}")
+    public ChassisDTO getProductChassis(@PathVariable Long chassis_id) {
+        ChassisEntity chassisEntity = chassisService.findById (chassis_id);
+        ChassisDTO chassisDTO = ChassisDTO.entityToDTO(chassisEntity);
+        return chassisDTO;
     }
-
     ;
 }
