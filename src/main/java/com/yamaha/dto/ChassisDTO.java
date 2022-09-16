@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Data
 @Builder
@@ -21,9 +23,9 @@ public class ChassisDTO {
     private String brakesRear;
     private String tiresFront;
     private String tiresRear;
-    private List<SpecificationEntity> specificationEntities;
+    private List<SpecificationDTO> specificationDTOList;
 
     public static ChassisDTO entityToDTO (ChassisEntity chassisEntity){
-        return ChassisDTO.builder().id(chassisEntity.getId()).suspensionFront(chassisEntity.getSuspensionFront()).suspensionRear(chassisEntity.getSuspensionRear()).brakesFront(chassisEntity.getBrakesFront()).brakesRear(chassisEntity.getBrakesRear()).tiresFront(chassisEntity.getTiresFront()).tiresRear(chassisEntity.getTiresRear()).build();
+        return ChassisDTO.builder().id(chassisEntity.getId()).suspensionFront(chassisEntity.getSuspensionFront()).suspensionRear(chassisEntity.getSuspensionRear()).brakesFront(chassisEntity.getBrakesFront()).brakesRear(chassisEntity.getBrakesRear()).tiresFront(chassisEntity.getTiresFront()).tiresRear(chassisEntity.getTiresRear()).specificationDTOList(chassisEntity.getSpecificationEntityList() == null? null : chassisEntity.getSpecificationEntityList().stream().map(SpecificationDTO::entityToDTO).collect(Collectors.toList())).build();
     }
 }

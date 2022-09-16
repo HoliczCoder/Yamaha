@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.List;
 
 @NoArgsConstructor
@@ -27,10 +26,10 @@ public class ChassisEntity {
     private String tiresRear;
     // mo ta cua engine viet o duoi day
     @OneToMany(mappedBy = "chassis", cascade = CascadeType.ALL)
-    private List<SpecificationEntity> specification;
+    private List<SpecificationEntity> specificationEntityList;
 
-    public void setSpecification(SpecificationEntity specification) {
-        this.specification.add(specification);
-        System.out.println(this.specification.toArray());
+    public void setSpecificationEntityList(SpecificationEntity specificationEntityList) {
+        this.specificationEntityList.add(specificationEntityList);
+        System.out.println(this.specificationEntityList.toArray());
     }
 }

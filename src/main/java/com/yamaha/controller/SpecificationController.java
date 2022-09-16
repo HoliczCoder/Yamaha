@@ -15,8 +15,6 @@ import com.yamaha.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("api/v1/specification")
 public class SpecificationController {
@@ -59,7 +57,7 @@ public class SpecificationController {
         specificationEntity.setChassis(chassisEntity); // thêm chassis vào
         specificationEntity.setDimension(dimensionEntity); // thêm dimension vào
         specificationEntity.setEngine(engineEntity);   // thêm engine vào
-        chassisEntity.setSpecification(specificationEntity);
+        chassisEntity.setSpecificationEntityList(specificationEntity);
         engineEntity.setSpecification(specificationEntity);
         dimensionEntity.setSpecification(specificationEntity);
         chassisRepository.save(chassisEntity);
