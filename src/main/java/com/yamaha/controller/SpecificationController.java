@@ -1,5 +1,6 @@
 package com.yamaha.controller;
 
+import com.yamaha.dto.SpecificationDTO;
 import com.yamaha.entity.ChassisEntity;
 import com.yamaha.entity.DimensionEntity;
 import com.yamaha.entity.EngineEntity;
@@ -45,7 +46,8 @@ public class SpecificationController {
     @GetMapping("/{specification_id}")
     public Object getProductSpecification (@PathVariable Long specification_id){
         SpecificationEntity specificationEntity = specificationService.findById(specification_id);
-        return "pending";
+        SpecificationDTO specificationDTO = SpecificationDTO.entityGoToDTO(specificationEntity);
+        return (specificationDTO);
     };
 
     @PutMapping("{specification_id}/chassis/{chassis_id}/dimension/{dimension_id}/engine/{engine_id}")

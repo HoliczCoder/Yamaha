@@ -1,5 +1,6 @@
 package com.yamaha.entity;
 
+import com.yamaha.model.MotorcycleCat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,10 @@ public class ProductEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @OneToOne
+    @JoinColumn (name = "category_id")
+    private MotorcycleCat motorcycleCat;
+    private String slogan;
     private String description;
     @OneToOne
     @JoinColumn(name = "specification_id")
@@ -35,8 +40,9 @@ public class ProductEntity extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "gallery_id")
     private GalleryEntity gallery;
-    @Column (name = "view")
-    private String view;
+    @OneToOne
+    @JoinColumn (name = "view_id")
+    private ViewEntity view;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "product_to_year_model", //Tạo ra một join Table tên là "address_person"
             joinColumns = @JoinColumn(name = "product_id"),  // TRong đó, khóa ngoại chính là address_id trỏ tới class hiện tại (Address)

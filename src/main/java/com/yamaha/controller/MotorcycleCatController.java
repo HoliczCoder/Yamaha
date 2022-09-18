@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/category")
+@RequestMapping("api/v1/motorcycle-category")
 public class MotorcycleCatController {
     @Autowired
     MotorcycleCatService motorcycleCatServiceImpl;
