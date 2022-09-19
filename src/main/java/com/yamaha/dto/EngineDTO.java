@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.web.server.Compression;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -20,6 +22,7 @@ public class EngineDTO {
     private String fuelDelivery;
     private String transmission;
     private String finalDrive;
+    private List<SpecificationDTO> specificationDTOList;
 
 
     public static EngineDTO entityToDTO (EngineEntity engineEntity){

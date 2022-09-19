@@ -1,5 +1,8 @@
 package com.yamaha;
 
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.Bucket;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +29,11 @@ public class YamahaApplication {
 //            System.out.println(next);
 //        }
 //        System.out.println("hello world");
+//        final AmazonS3 s3 = AmazonS3ClientBuilder.standard().build();
+//        List<Bucket> buckets = s3.listBuckets();
+//        buckets.stream().forEach( bucket -> {
+//            System.out.println("Bucket Name" + bucket.getName() + ", bucket owner:" + bucket.getOwner().getDisplayName() + ", bucket creation date" + bucket.getCreationDate());
+//        });
 
 
     }
