@@ -1,6 +1,5 @@
 package com.yamaha.entity;
 
-import com.yamaha.model.MotorcycleCat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +21,7 @@ public class ProductEntity extends BaseEntity {
     private String name;
     @OneToOne
     @JoinColumn (name = "category_id")
-    private MotorcycleCat motorcycleCat;
+    private MotorcycleCatEntity motorcycleCatEntity;
     private String slogan;
     private String description;
     @OneToOne

@@ -109,9 +109,10 @@ public class AmazonClient {
     }
 
     public String deleteObjectFromBucket (String bucketName, String keyName){
+        System.out.println(bucketName);
         try {
-            Regions clientRegion = Regions.DEFAULT_REGION;
-//            AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
+//            Regions clientRegion = Regions.DEFAULT_REGION;
+//            AmazonS3 s3client = AmazonS3ClientBuilder.standard()
 //                    .withCredentials(new ProfileCredentialsProvider())
 //                    .withRegion(clientRegion)
 //                    .build();
@@ -121,12 +122,12 @@ public class AmazonClient {
             // The call was transmitted successfully, but Amazon S3 couldn't process
             // it, so it returned an error response.
             e.printStackTrace();
-            return ("an lz roi");
+            return ("an lz tap 1");
         } catch (SdkClientException e) {
             // Amazon S3 couldn't be contacted for a response, or the client
             // couldn't parse the response from Amazon S3.
             e.printStackTrace();
-            return ("an lz roi");
+            return ("an lz tap 2");
         }
     }
 

@@ -1,13 +1,18 @@
 package com.yamaha.service;
 
-import com.yamaha.model.MotorcycleCat;
+import com.yamaha.entity.CategoryEntity;
+import com.yamaha.entity.MotorcycleCatEntity;
 
 import java.util.List;
 
 public interface MotorcycleCatService {
-    public Boolean addCategory(MotorcycleCat motorcycleCat);
+    public Boolean addCategory(MotorcycleCatEntity motorcycleCatEntity);
 
     public String removeCategoryById(Long id);
 
-    public List<MotorcycleCat> getAllCategory();
+    public List<MotorcycleCatEntity> getAllCategory();
+
+    MotorcycleCatEntity findById(Long category_id);
+
+    void updateCategory(MotorcycleCatEntity motorcycleCatEntity);
 }

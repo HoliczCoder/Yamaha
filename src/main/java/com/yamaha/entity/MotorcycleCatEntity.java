@@ -1,19 +1,23 @@
-package com.yamaha.model;
+package com.yamaha.entity;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Builder
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MotorcycleCat {
+@Table(name="motorcycle_cat")
+public class MotorcycleCatEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private String name;
+    private String coverImage;
 }
