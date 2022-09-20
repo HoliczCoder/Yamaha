@@ -1,12 +1,9 @@
 package com.yamaha.controller;
 
-import com.yamaha.entity.CategoryEntity;
 import com.yamaha.entity.MotorcycleCatEntity;
 import com.yamaha.entity.ProductEntity;
 import com.yamaha.entity.SpecificationEntity;
-import com.yamaha.model.MotorcycleCat;
 import com.yamaha.model.ProductModel;
-import com.yamaha.service.CategoryService;
 import com.yamaha.service.MotorcycleCatService;
 import com.yamaha.service.ProductService;
 import com.yamaha.service.SpecificationService;

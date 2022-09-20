@@ -4,6 +4,7 @@ import com.yamaha.entity.CategoryEntity;
 import com.yamaha.entity.MotorcycleCatEntity;
 import com.yamaha.repository.MotorcycleCatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -53,6 +54,11 @@ public class MotorcycleCatServiceImpl implements MotorcycleCatService {
     @Override
     public void updateCategory(MotorcycleCatEntity motorcycleCatEntity) {
         motorcycleCatRepository.save(motorcycleCatEntity);
+    }
+
+    @Override
+    public List<MotorcycleCatEntity> findAll() {
+        return motorcycleCatRepository.findAll();
     }
 
 

@@ -6,14 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MotorcycleCat {
+public class MotorcycleCatModel {
     private Long id;
     private String name;
 }

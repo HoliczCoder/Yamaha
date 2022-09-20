@@ -14,8 +14,9 @@ public class BucketController {
 
     @PostMapping("/uploadFile")
     public String uploadFile(@RequestPart(value = "file") MultipartFile file, @RequestPart(value = "folder") String folderName) {
-        return this.amazonClient.uploadFileTos3bucketIfNotExits(file, folderName);
+        return this.amazonClient.uploadFilewithFolder(file, folderName);
     }
+
 
 //    @DeleteMapping("/deleteFile")
 //    public String deleteFileInFolder(@RequestPart(value = "url") String fileUrl ,@RequestPart(value = "folder")String folderName) {

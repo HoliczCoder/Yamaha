@@ -19,5 +19,5 @@ public class MotorcycleCatEntity {
     private Long id;
     @NotNull
     private String name;
-    private String coverImage;
+    private String categoryImage;
 }

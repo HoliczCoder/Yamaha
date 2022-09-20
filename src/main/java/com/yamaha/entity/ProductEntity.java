@@ -24,6 +24,8 @@ public class ProductEntity extends BaseEntity {
     private MotorcycleCatEntity motorcycleCatEntity;
     private String slogan;
     private String description;
+    @Column(name = "cover_image")
+    private String coverImage;
     @OneToOne
     @JoinColumn(name = "specification_id")
     private SpecificationEntity specification;
