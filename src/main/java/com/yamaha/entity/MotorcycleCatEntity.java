@@ -20,4 +20,5 @@ public class MotorcycleCatEntity {
     @NotNull
     private String name;
     private String categoryImage;
+    private String coverImage;
 }

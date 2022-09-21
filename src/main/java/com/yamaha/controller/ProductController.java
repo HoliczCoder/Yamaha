@@ -1,5 +1,6 @@
 package com.yamaha.controller;
 
+import com.yamaha.dto.ProductDTO;
 import com.yamaha.entity.MotorcycleCatEntity;
 import com.yamaha.entity.ProductEntity;
 import com.yamaha.entity.SpecificationEntity;
@@ -9,6 +10,8 @@ import com.yamaha.service.ProductService;
 import com.yamaha.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/product")
@@ -42,4 +45,10 @@ public class ProductController {
         productService.update(productEntity);
         return ("okie");
     }
+
+    @GetMapping("/{category_id}")
+    public List<ProductDTO> getProductByCategoryId (@PathVariable Long category_id){
+        List<ProductDTO> productDTOS = productService.getProductByCategoryId (category_id);
+        return productDTOS;
+    };
 }
